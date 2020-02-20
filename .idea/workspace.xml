@@ -59,6 +59,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="eabfa6c2-ac98-4cd9-8afb-85c67bd7f0ee" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="980" />
@@ -167,7 +170,7 @@
       <updated>1582219381270</updated>
       <workItem from="1582219388320" duration="1141000" />
       <workItem from="1582220578896" duration="1017000" />
-      <workItem from="1582221656034" duration="342000" />
+      <workItem from="1582221656034" duration="440000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1582219588287</created>
@@ -187,7 +190,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2500000" />
+    <option name="totallyTimeSpent" value="2598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
