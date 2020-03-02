@@ -62,23 +62,24 @@ class BarChart:
         :param x_name: name of x label (not must need)
         :return: nothing
         """
-        list_position = [self.basic_position]
+        actual_position = np.arange(0, len(self.objects)*len(self.x), len(self.x))
+        list_position = [actual_position]
         plt.title(self.title)
         bar = []
-        for i in range(len(self.data)):
-            position = [x + barWidth*(i+1) for x in self.basic_position]
+        for i in range(len(self.x)):
+            position = [x + barWidth*(i+1) for x in actual_position]
             list_position.append(position)
         if self.position == 'vertical':
             for i in range(len(self.data)):
                 p = plt.bar(list_position[i], self.data[i], color=list_colors[i], width=barWidth, edgecolor='white', label=label_name[i])
                 bar.append(p)
-            plt.xticks(self.basic_position + barWidth*int(len(self.x)/2), self.objects)
+            plt.xticks(actual_position + barWidth*int(len(self.x)/2), self.objects)
             plt.xlabel(x_name, fontweight='bold')
         elif self.position == 'horizontal':
             for i in range(len(self.data)):
-                p = plt.barh(list_position[i], self.data[i], color=list_colors[i], width=barWidth, edgecolor='white', label=label_name[i])
+                p = plt.barh(list_position[i], self.data[i], color=list_colors[i], height=barWidth, edgecolor='white', label=label_name[i])
                 bar.append(p)
-            plt.yticks(self.basic_position + barWidth*int(len(self.data)/2), self.objects)
+            plt.yticks(actual_position + barWidth*int(len(self.data)/2), self.objects)
             plt.ylabel(x_name, fontweight='bold')
         plt.legend(bar, label_name)
 
@@ -109,21 +110,4 @@ class BarChart:
                 bar.append(p2)
         plt.legend(bar, bar_name)
 
-    def box_plot(self, bar_name=''):
-        plt.title(self.title)
-        if self.position == 'vertical':
-            bplot = plt.boxplot(self.data, 0, 'rs', vert=True, positions=self.basic_position, patch_artist=True)
-            plt.xticks(self.basic_position, self.objects)
-            plt.ylabel(bar_name)
-            for patch in bplot['boxes']:
-                patch.set(color='green')
-            for median in bplot['medians']:
-                median.set(color='red')
-        elif self.position == 'horizontal':
-            bplot = plt.boxplot(self.data, 0, 'rs', vert=False, positions=self.basic_position, patch_artist=True)
-            plt.yticks(self.basic_position, self.objects)
-            plt.xlabel(bar_name)
-            for patch in bplot['boxes']:
-                patch.set(color='green')
-            for median in bplot['medians']:
-                median.set(color='red')
+
