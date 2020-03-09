@@ -5,7 +5,20 @@ from kivy.properties import StringProperty
 from kivy.properties import ListProperty
 from kivy.uix.button import Button
 from kivy.core.window import Window
+from kivy.uix.screenmanager import Screen, ScreenManager
 Chart_list = ['Area chart', 'Bar chart', 'Box plot', 'Bubble chart', 'Histogram', 'Line chart', 'Pie chart', 'Radar chart', 'Scatter chart']
+
+
+class MainWindow(Screen):
+    pass
+
+
+class LineChartWindow(Screen):
+    pass
+
+
+class WindowManager(ScreenManager):
+    pass
 
 
 class DrawChartsApp(App):
@@ -34,7 +47,6 @@ class DrawChartsApp(App):
 
     # def draw_charts(self, key):
         # if str(key) == self.list_chart[0]:
-
 
 
 if __name__ == '__main__':

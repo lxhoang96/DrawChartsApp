@@ -1,3 +1,56 @@
+<MainWindow>:
+    name: 'main'
+    Button:
+        text: 'Go to draw'
+        on_release:
+            root.manager.current = 'LineChart'
+            root.manager.transition.direction = 'left'
+<LineChartWindow>:
+    name: 'LineChart'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Title:'
+            TextInput:
+                id: title
+                multiline: False
+                write_tab: False
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Data:'
+            TextInput:
+                id: values
+                multiline: False
+                write_tab: False
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Objects:'
+            TextInput:
+                id: objects
+                multiline: False
+                write_tab: False
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Name:'
+            TextInput:
+                id: y_name
+                multiline: False
+                write_tab: False
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Unit:'
+            TextInput:
+                id: unit
+                multiline: False
+                write_tab: False
+
 
 BoxLayout:
     orientation: 'vertical'
@@ -67,54 +120,17 @@ BoxLayout:
             Button:
                 text: 'Draw'
     #            on_press:
+
         BoxLayout:
+
             orientation: 'vertical'
             size_hint: (0.8, 1)
             BoxLayout:
-                orientation: 'horizontal'
                 size_hint: (1, 0.3)
-                BoxLayout:
-                    orientation: 'vertical'
-                    Label:
-                        text: 'Title:'
-                    TextInput:
-                        id: title
-                        multiline: False
-                        write_tab: False
-                BoxLayout:
-                    orientation: 'vertical'
-                    Label:
-                        text: 'Data:'
-                    TextInput:
-                        id: values
-                        multiline: False
-                        write_tab: False
-                BoxLayout:
-                    orientation: 'vertical'
-                    Label:
-                        text: 'Objects:'
-                    TextInput:
-                        id: objects
-                        multiline: False
-                        write_tab: False
-                BoxLayout:
-                    orientation: 'vertical'
-                    Label:
-                        text: 'Name:'
-                    TextInput:
-                        id: y_name
-                        multiline: False
-                        write_tab: False
-                BoxLayout:
-                    orientation: 'vertical'
-                    Label:
-                        text: 'Unit:'
-                    TextInput:
-                        id: unit
-                        multiline: False
-                        write_tab: False
-
+                WindowManager:
+                    MainWindow:
+                    LineChartWindow:
             BoxLayout:
                 size_hint: (1, 0.7)
                 background_normal: ''
-                background_color: 1,0,0,0
+                background_color: (1, 1, 1, 1)
