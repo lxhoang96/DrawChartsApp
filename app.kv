@@ -112,10 +112,14 @@ BoxLayout:
             Label:
                 text: 'Choose a chart type:'
             Spinner:
-                text: app.first_chart
+                text: ''
                 values: app.list_chart
-    #            on_text:
                 id: kind_chart
+                on_text:
+                    type.values = app.type_charts(self.text)
+            Spinner:
+                text: ''
+                id: type
 
             Button:
                 text: 'Draw'
@@ -133,4 +137,5 @@ BoxLayout:
             BoxLayout:
                 size_hint: (1, 0.7)
                 background_normal: ''
-                background_color: (1, 1, 1, 1)
+                background_color: 1,1,1
+                id: draw_chart
